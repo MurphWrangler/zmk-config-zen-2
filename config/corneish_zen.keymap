@@ -13,7 +13,7 @@
         compatible = "zmk,combos";
         combo_esc {
             timeout-ms = <50>;
-            key-positions = <33 34>;
+            key-positions = <32 35>;
             layers = <0>;
             bindings = <&mo 2>;
         };
@@ -25,42 +25,30 @@
 
                 default_layer {
                         label = "Colemak-DH";
-// -----------------------------------------------------------------------------------------
-//  |  Q  |  W  |  F  |  P  |  B  |   |  J  |  L   |  U  |  Y  |  '  |
-//  |  A  |  R  |  S  |  T  |  G  |   |  M  |  N   |  E  |  I  |  O  |
-//  |  Z  |  X  |  C  |  D  |  v  |   |  K  |  H   |  ,  |  .  |  /  |
-//              | GUI | LWR | SHIFT |   | SPACE | RSE  | ALT |
+
                         bindings = <
-   &kp Q &kp W &kp F &kp P &kp B   &kp J &kp L  &kp U     &kp Y   &kp SQT    
-   &kp A &kp R &kp S &kp T &kp G   &kp M &kp N  &kp E     &kp I   &kp O 
-   &kp Z &kp X &kp C &kp D &kp V   &kp K &kp H  &kp COMMA &kp DOT &kp FSLH 
-                  &kp LGUI &mo 1 &kp LSHFT   &kp SPACE &mo 3 &kp RALT
+   &kp Q &kp W &kp F &kp P &kp B                      &kp J &kp L  &kp U     &kp Y   &kp SQT    
+   &kp A &kp R &kp S &kp T &kp G                      &kp M &kp N  &kp E     &kp I   &kp O 
+   &kp Z &kp X &kp C &kp D &kp V                     &kp K &kp H  &kp COMMA &kp DOT &kp FSLH 
+              &kp TAB &lt 1 BSPC &kp LSHFT   &kp SPACE &lt 3 ENTER &kp K_CMENU
                         >;
                 };
                 number_layer {
                         label = "NUMBER";
-// -----------------------------------------------------------------------------------------
-// | ESC  |  2  |  3  |  4  |  5  |   |  +  |  7 |  8  |  9  |    |  |
-// |Shift| GUI | ALT | CTRL|     |   | - | 4 |  5 | 6 |   .  |      |
-// |BTCLR|     |     |     |     |   |   *  |   1  |  2   | 3    |     |      |
-//             | GUI |     |  |   | ENT |    0 |  |
+
                         bindings = <
-       &kc ESC &trans &trans &trans  &trans             &trans        &trans   &trans &trans 
-    &sk LSHFT &sk LGUI  &sk LALT &sk LCTRL  &trans      &kp MINUS &kp N4 &kp N5 &kp N6 &kp DOT
-     &trans       &trans       &trans       &trans      &trans       &kp STAR   &trans   &trans &trans    &trans 
-                            &kp LGUI     &trans  &trans &trans  &kp N0   &kp RALT
+    &kc ESC  &trans    &trans   &trans    &trans                 &kp PLUS &kp N7   &kp N8 &kp N9 &kp EQUAL
+    &sk LGUI &sk LSHFT &sk LALT &sk LCTRL &trans                 &kp MINUS &kp N4 &kp N5 &kp N6 &kp DOT
+    &trans   &trans    &trans   &trans    &trans                 &kp STAR   &kp N1   &kp N2 &kp N3    &kp ENTER 
+                            &kp LGUI   &trans  &trans     &trans  &kp N0   &trans
                         >;
                 };
                 bluetooth_layer {
                         label = "BLUETOOTH";
-// -----------------------------------------------------------------------------------------
-// |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
-// | BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
-// |BTCLR|     |     |     |     |   |     |     |     |     |     |      |
-//             | GUI |     | SPC |   | ENT |     | ALT |
+
                         bindings = <
-       &kp N1       &kp N2       &kp N3       &kp N4       &kp N5         &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 
-    &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4      &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans 
+       &kp N1       &kp LBRC  &kp LBKT       &kp LPAR        &kp N5         &kp N6   &kp RPAR  &kp N8 &kp N9    &kp N0 
+    &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4      &trans &sk RCTRL &sk RALT &sk RSHFT &sk RGUI 
      &bt BT_CLR       &trans       &trans       &trans       &trans       &trans   &trans   &trans &trans    &trans 
                           	   &kp LGUI     &trans       &trans        &trans  &trans   &kp RALT
                         >;
@@ -68,14 +56,12 @@
 
                 raise_layer {
                         label = "SYMBOL";
-// -----------------------------------------------------------------------------------------
-// |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
-// |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
-// | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
+
                         bindings = <
-   &trans &kp HOME &kp UP &kp END &trans
-   &trans &kp LEFT &kp DOWN &kp RIGHT &trans     &trans &sk RCTRL &sk RALT &sk RGUI &sk RSHFT
+   &kp GRAVE &kp HOME &kp UP   &kp END   &kp PG_UP                  &trans &trans    &trans   &trans    &trans
+   &trans    &kp LEFT &kp DOWN &kp RIGHT &kp PG_DN                  &trans &sk RCTRL &sk RALT &sk RSHFT &sk RGUI
+   &trans    &trans   &trans   &trans    &trans                     &trans &trans    &trans   &trans   &trans
+                                 &trans &kp DEL &trans    &trans &trans &trans
                         >;
                 };
         };
