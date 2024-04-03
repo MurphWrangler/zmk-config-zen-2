@@ -47,9 +47,9 @@
                         label = "BLUETOOTH";
 
                         bindings = <
-       &kp N1       &kp LBRC  &kp LBKT       &kp LPAR        &kp N5         &kp N6   &kp RPAR  &kp N8 &kp N9    &kp N0 
+       &kp N1       &kp LBRC  &kp LBKT       &kp LPAR        &kp N5         &kp N6   &kp RPAR  &kp RBKT &kp RBRC    &kp N0 
     &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4      &trans &sk RCTRL &sk RALT &sk RSHFT &sk RGUI 
-     &bt BT_CLR       &trans       &trans       &trans       &trans       &trans   &trans   &trans &trans    &trans 
+     &bt BT_CLR       &kp C_RESET       &trans       &trans       &trans       &trans   &trans   &trans &trans    &trans 
                           	   &kp LGUI     &trans       &trans        &trans  &trans   &kp RALT
                         >;
                 };
@@ -60,7 +60,7 @@
                         bindings = <
    &kp GRAVE &kp HOME &kp UP   &kp END   &kp PG_UP                  &trans &trans    &trans   &trans    &trans
    &trans    &kp LEFT &kp DOWN &kp RIGHT &kp PG_DN                  &trans &sk RCTRL &sk RALT &sk RSHFT &sk RGUI
-   &trans    &trans   &trans   &trans    &trans                     &trans &trans    &trans   &trans   &trans
+   &kp F1    &kp F2   &kp F3   &kp F4    &kp F5                     &kp F6 &kp F7    &kp F8   &kp F9   &kp F10
                                  &trans &kp DEL &trans    &trans &trans &trans
                         >;
                 };
