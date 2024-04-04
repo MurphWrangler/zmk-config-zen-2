@@ -27,25 +27,17 @@
 
                 default_layer {
                         label = "QWERTY";
-// -----------------------------------------------------------------------------------------
-// |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
-// | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
-// | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
-//                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
+
                         bindings = <
      &kp Q &kp W &kp F &kp P &kp B                      &kp J &kp L  &kp U     &kp Y   &kp SQT    
    &kp A &kp R &kp S &kp T &kp G                      &kp M &kp N  &kp E     &kp I   &kp O 
    &kp Z &kp X &kp C &kp D &kp V                     &kp K &kp H  &kp COMMA &kp DOT &kp FSLH 
-              &kp TAB &mo 1 &kp LSHFT   &kp SPACE &mo 3 &kp K_CMENU
+              &kp TAB &mo 1 &kp LSHFT   &kp SPACE &mo 3 &lt 2 K_CMENU
                         >;
                 };
                 lower_layer {
                         label = "NUMBER";
-// -----------------------------------------------------------------------------------------
-// |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
-// | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
-// | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
+
                         bindings = <
    &kp ESC  &trans    &trans   &trans    &trans                 &kp PLUS &kp N7   &kp N8 &kp N9 &kp EQUAL
     &sk LGUI &sk LSHFT &sk LALT &sk LCTRL &trans                 &kp MINUS &kp N4 &kp N5 &kp N6 &kp DOT
@@ -55,26 +47,18 @@
                 };
 mid_layer {
                         label = "BLUETOOTH";
-// -----------------------------------------------------------------------------------------
-// |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
-// | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
-// | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
+
                         bindings = <
    &kp N1       &kp LBRC  &kp LBKT       &kp LPAR        &kp N5         &kp N6   &kp RPAR  &kp RBKT &kp RBRC    &kp N0 
     &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4      &trans &sk RCTRL &sk RALT &sk RSHFT &sk RGUI 
      &bt BT_CLR       &kp C_RESET       &trans       &trans       &trans       &trans   &trans   &trans &trans    &trans 
-                          	   &kp LGUI     &trans       &trans        &trans  &trans   &kp RALT
+                          	   &trans     &trans       &trans        &trans  &trans   &trans
                         >;
                 };
 
                 raise_layer {
                         label = "NAV";
-// -----------------------------------------------------------------------------------------
-// |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
-// | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
-// | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
+
                         bindings = <
   &kp GRAVE &kp HOME &kp UP   &kp END   &kp PG_UP                  &trans &trans    &trans   &trans    &trans
    &trans    &kp LEFT &kp DOWN &kp RIGHT &kp PG_DN                  &trans &sk RCTRL &sk RALT &sk RSHFT &sk RGUI
