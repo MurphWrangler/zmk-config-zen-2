@@ -9,7 +9,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&skq LSHIFT>, <&caps_word>, <&kp LSHIFT>;
+            bindings = <&skq LSHIFT>, <&caps_word>;
         };
     skq: sticky_key_quick_release {
       compatible = "zmk,behavior-sticky-key";
