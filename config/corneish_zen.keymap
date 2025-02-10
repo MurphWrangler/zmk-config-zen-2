@@ -10,9 +10,6 @@
             tapping-term-ms = <200>;
             bindings = <&skq LSHIFT>, <&caps_word>, <&kp LSHIFT>;
         };
-    };
-/ {
-  behaviors {
     skq: sticky_key_quick_release {
       compatible = "zmk,behavior-sticky-key";
       label = "STICKY_KEY_QUICK_RELEASE";
