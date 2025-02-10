@@ -8,10 +8,25 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&sk LSHIFT>, <&caps_word>, <&mo 1>;
+            bindings = <&skq LSHIFT>, <&caps_word>, <&kp LSHIFT>;
         };
     };
+/ {
+  behaviors {
+    skq: sticky_key_quick_release {
+      compatible = "zmk,behavior-sticky-key";
+      label = "STICKY_KEY_QUICK_RELEASE";
+      #binding-cells = <1>;
+      bindings = <&kp>;
+      release-after-ms = <1000>;
+      quick-release;
+    };
+  };
 
+  keymap {
+    ...
+  };
+};
     keymap {
         compatible = "zmk,keymap";
 
@@ -44,7 +59,7 @@
   &kp Q &kp W &kp F &kp P &kp B   &kp J &kp L  &kp U     &kp Y   &kp SQT  
  &kp A &kp R &kp S &kp T &kp G   &kp M &kp N  &kp E     &kp I   &kp O
  &kp Z &kp X &kp C &kp D &kp V   &kp K &kp H  &kp COMMA &kp DOT &kp FSLH
-               &kp LGUI &mo 2 &td_mt   &lt 3 SPACE &lt 4 RET &kp RALT
+               &mo 2 &mo 1 &td_mt   &lt 4 SPACE &lt 3 RET &kp K_APP
             >;
         };
 
@@ -57,7 +72,7 @@
 //                    | GUI |     | SPC |   | ENT |     | ALT |
             bindings = <
    &kp ESC       &trans       &trans       &trans       &kp KP_NUM         &kp STAR   &kp KP_N7   &kp KP_N8 &kp KP_N9    &kp PLUS 
- &sk LSHIFT &sk LALT &sk LCTRL &sk LGUI &sk RALT        &kp EQUAL &kp KP_N4 &kp KP_N5 &kp KP_N6 &kp MINUS 
+ &sk LSHIFT &sk LALT &sk LCTRL &sk LGUI &sk RALT                     &kp EQUAL &kp KP_N4 &kp KP_N5 &kp KP_N6 &kp MINUS 
   &trans       &trans       &trans       &trans       &trans         &kp KP_N0   &kp KP_N1   &kp KP_N2 &kp KP_N3    &kp SLASH
                                      &trans     &trans       &trans      &trans  &trans   &trans
             >;
@@ -74,49 +89,49 @@
  &kp ESC &kp C_PREV &kp C_PP &kp C_NEXT &kp C_BRI_UP        &kp F12 &kp F7  &kp F8 &kp F9  &trans
   &sk LSHIFT &sk LALT &sk LCTRL &sk LGUI &kp C_BRI_DN      &kp F11 &kp F4 &kp F5  &kp F6 &trans
  &kp C_MUTE   &kp C_VOL_DN &trans   &kp C_VOL_UP   &trans      &kp F10 &kp F1  &kp F2  &kp F3 &trans
-                           &trans     &trans       &trans      &trans  &trans   &trans
+                           &trans     &trans       &trans      &trans  &mo 5   &trans
             >;
         };
  SYM_layer {
-            display-name = "SYMBOL";
+            display-name = "Symbol";
 // -----------------------------------------------------------------------------------------
 // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BSPC |
 // | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
 // | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
 //                    | GUI |     | SPC |   | ENT |     | ALT |
             bindings = <
- &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp ASTRK &kp LPAR &kp RPAR 
- &trans   &trans &trans   &trans   &trans      &kp MINUS &kp EQUAL &kp LBKT  &kp RBKT &kp BSLH 
- &trans   &trans &trans   &trans   &trans      &kp UNDER &kp PLUS  &kp LBRC  &kp RBRC &kp PIPE 
-                          &kp LGUI &mo 3   &kp SPACE   &kp RET   &trans    &kp RALT
+ &kp ESC &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp STAR &kp AMPS  &kp PIPE &kp UNDER &kp MINUS 
+ &trans   &trans &kp LBRC   &kp LBKT   &kp LPAR     &kp EQUAL &sk RGUI &sk RCTL  &sk RALT &sk RSHIFT 
+ &trans   &trans &kp RBRC   &kp RBKT   &kp RPAR     &kp TILDE &kp COLON  &kp SEMI  &kp RBRC &kp EXCL 
+                          &mo 5     &trans       &trans      &trans  &trans   &trans
             >;
         };
  EXT_layer {
-            display-name = "SYMBOL";
+            display-name = "Navigation";
 // -----------------------------------------------------------------------------------------
 // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BSPC |
 // | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
 // | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
 //                    | GUI |     | SPC |   | ENT |     | ALT |
             bindings = <
- &mo 4 &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp ASTRK &kp LPAR &kp RPAR 
- &trans   &trans &trans   &trans   &trans      &kp MINUS &kp EQUAL &kp LBKT  &kp RBKT &kp BSLH 
- &trans   &trans &trans   &trans   &trans      &kp UNDER &kp PLUS  &kp LBRC  &kp RBRC &kp PIPE 
-                          &kp LGUI &mo 3   &kp SPACE   &kp RET   &trans    &kp RALT
+ &kp ESC &kp HOME &kp UP &kp END &kp PG_UP   &kp CARET &kp AMPS  &kp ASTRK &kp LPAR &kp RPAR 
+ &kp LC(A)   &kp LEFT &kp DOWN   &kp RIGHT   &kp PG_DN      &trans &sk RGUI &sk RCTL  &sk RALT &sk RSHIFT  
+ &kp LC(Z)   &kp LC(X) &kp LC(C)   &kp TAB   &kp LC(V)      &kp LC(LA(V)) &kp BSPC  &kp DEL  &kp PSCRN &kp INS
+                           &trans     &trans       &trans      &trans  &trans   &trans
             >;
         };
  BT_layer {
-            display-name = "SYMBOL";
+            display-name = "Misc";
 // -----------------------------------------------------------------------------------------
 // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BSPC |
 // | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
 // | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
 //                    | GUI |     | SPC |   | ENT |     | ALT |
             bindings = <
- &trans &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp ASTRK &kp LPAR &kp RPAR 
+ &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp CARET &kp AMPS  &kp ASTRK &kp LPAR &kp RPAR 
  &trans   &trans &trans   &trans   &trans      &kp MINUS &kp EQUAL &kp LBKT  &kp RBKT &kp BSLH 
- &trans   &trans &trans   &trans   &trans      &kp UNDER &kp PLUS  &kp LBRC  &kp RBRC &kp PIPE 
-                          &kp LGUI &mo 3   &kp SPACE   &kp RET   &trans    &kp RALT
+ &bt BT_CLR   &out OUT_TOG &trans   &trans   &studio_unlock      &kp UNDER &kp PLUS  &kp LBRC  &kp RBRC &kp PIPE 
+                          &&trans     &trans       &trans      &trans  &trans   &trans
             >;
         };
     };
