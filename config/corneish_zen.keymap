@@ -95,7 +95,7 @@
 //                    | GUI |     | SPC |   | ENT |     | ALT |
             bindings = <
  &kp ESC &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp STAR &kp AMPS  &kp PIPE &kp UNDER &kp MINUS 
- &trans   &trans &kp LBRC   &kp LBKT   &kp LPAR     &kp EQUAL &sk RGUI &sk RCTL  &sk RALT &sk RSHIFT 
+ &trans   &trans &kp LBRC   &kp LBKT   &kp LPAR     &kp EQUAL &sk RGUI &sk LCTL  &sk RALT &sk RSHIFT 
  &trans   &trans &kp RBRC   &kp RBKT   &kp RPAR     &kp TILDE &kp COLON  &kp SEMI  &kp RBRC &kp EXCL 
                           &mo 5     &trans       &trans      &trans  &trans   &trans
             >;
@@ -109,7 +109,7 @@
 //                    | GUI |     | SPC |   | ENT |     | ALT |
             bindings = <
  &kp ESC &kp HOME &kp UP &kp END &kp PG_UP   &kp CARET &kp AMPS  &kp ASTRK &kp LPAR &kp RPAR 
- &kp LC(A)   &kp LEFT &kp DOWN   &kp RIGHT   &kp PG_DN      &trans &sk RGUI &sk RCTL  &sk RALT &sk RSHIFT  
+ &kp LC(A)   &kp LEFT &kp DOWN   &kp RIGHT   &kp PG_DN      &trans &sk RGUI &sk LCTL  &sk RALT &sk RSHIFT  
  &kp LC(Z)   &kp LC(X) &kp LC(C)   &kp TAB   &kp LC(V)      &kp LC(LA(V)) &kp BSPC  &kp DEL  &kp PSCRN &kp INS
                            &trans     &trans       &trans      &trans  &trans   &trans
             >;
