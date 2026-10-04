@@ -1,0 +1,107 @@
+// Re-Gret: port of MurphWrangler/zmk-config-zen-2 (studio).
+// Logical key positions: three rows of ten, then four thumbs left-to-right.
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/outputs.h>
+#define BASE 0
+#define NUM 1
+#define SYM 2
+#define NAV 3
+#define FN 4
+#define MISC 5
+
+/ {
+    behaviors {
+        skq: sticky_key_quick_release {
+            compatible = "zmk,behavior-sticky-key";
+            #binding-cells = <1>;
+            bindings = <&kp>;
+            release-after-ms = <300>;
+            quick-release;
+        };
+        alt_num: alt_number {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            bindings = <&mo>, <&skq>;
+            flavor = "balanced";
+            tapping-term-ms = <200>;
+        };
+        thumb_lt: thumb_layer_tap {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            bindings = <&mo>, <&kp>;
+            flavor = "balanced";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <125>;
+        };
+    };
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+        function_layer { if-layers = <NAV SYM>; then-layer = <FN>; };
+        misc_layer { if-layers = <NUM SYM>; then-layer = <MISC>; };
+    };
+    combos {
+        compatible = "zmk,combos";
+        escape { bindings = <&kp ESC>; key-positions = <0 10>; timeout-ms = <50>; require-prior-idle-ms = <150>; layers = <BASE>; };
+        tab { bindings = <&kp TAB>; key-positions = <1 11>; timeout-ms = <50>; require-prior-idle-ms = <150>; layers = <BASE>; };
+        menu { bindings = <&kp K_APP>; key-positions = <5 15>; timeout-ms = <50>; require-prior-idle-ms = <150>; layers = <BASE>; };
+    };
+    keymap {
+        compatible = "zmk,keymap";
+        layer_0 {
+            display-name = "Colemak";
+            bindings = <
+                &kp Q  &kp W  &kp F  &kp P  &kp B  &kp J  &kp L  &kp U  &kp Y  &kp SQT
+                &kp A  &kp R  &kp S  &kp T  &kp G  &kp M  &kp N  &kp E  &kp I  &kp O
+                &kp Z  &kp X  &kp C  &kp D  &kp V  &kp K  &kp H  &kp COMMA  &kp DOT  &kp FSLH
+                &alt_num NUM LALT  &skq LSHIFT  &thumb_lt NAV SPACE  &thumb_lt SYM RET
+            >;
+        };
+        layer_1 {
+            display-name = "Number";
+            bindings = <
+                &kp ESC  &trans  &trans  &trans  &kp KP_NUM  &kp STAR  &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp PLUS
+                &skq LSHIFT  &skq LALT  &skq LCTRL  &skq LGUI  &skq RALT  &kp EQUAL  &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp MINUS
+                &trans  &trans  &trans  &trans  &trans  &kp KP_N0  &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp SLASH
+                &trans  &trans  &trans  &trans
+            >;
+        };
+        layer_2 {
+            display-name = "Symbol";
+            bindings = <
+                &kp ESC  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT  &kp STAR  &kp AMPS  &kp PIPE  &kp UNDER  &kp MINUS
+                &trans  &trans  &kp LBRC  &kp LBKT  &kp LPAR  &kp EQUAL  &skq RGUI  &skq LCTL  &skq RALT  &skq RSHIFT
+                &trans  &trans  &kp RBRC  &kp RBKT  &kp RPAR  &kp TILDE  &kp COLON  &kp SEMI  &kp RBRC  &kp EXCL
+                &trans  &trans  &trans  &trans
+            >;
+        };
+        layer_3 {
+            display-name = "Navigation";
+            bindings = <
+                &kp ESC  &kp HOME  &kp UP  &kp END  &kp PG_UP  &kp CARET  &kp AMPS  &kp ASTRK  &kp LPAR  &kp RPAR
+                &kp LC(A)  &kp LEFT  &kp DOWN  &kp RIGHT  &kp PG_DN  &trans  &skq RGUI  &skq LCTL  &skq RALT  &skq RSHIFT
+                &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp TAB  &kp LC(V)  &kp LC(LA(V))  &kp BSPC  &kp DEL  &kp PSCRN  &kp INS
+                &trans  &trans  &trans  &trans
+            >;
+        };
+        layer_4 {
+            display-name = "Function";
+            bindings = <
+                &kp ESC  &kp C_PREV  &kp C_PP  &kp C_NEXT  &kp C_BRI_UP  &kp F12  &kp F7  &kp F8  &kp F9  &trans
+                &skq LSHIFT  &skq LALT  &skq LCTRL  &skq LGUI  &kp C_BRI_DN  &kp F11  &kp F4  &kp F5  &kp F6  &trans
+                &kp C_MUTE  &kp C_VOL_DN  &trans  &kp C_VOL_UP  &trans  &kp F10  &kp F1  &kp F2  &kp F3  &trans
+                &trans  &trans  &trans  &trans
+            >;
+        };
+        layer_5 {
+            display-name = "Misc";
+            bindings = <
+                &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &kp CARET  &kp AMPS  &kp ASTRK  &kp LPAR  &kp RPAR
+                &trans  &trans  &trans  &trans  &trans  &kp MINUS  &kp EQUAL  &kp LBKT  &kp RBKT  &kp BSLH
+                &bt BT_CLR  &out OUT_TOG  &trans  &trans  &bootloader  &kp UNDER  &kp PLUS  &kp LBRC  &kp RBRC  &kp PIPE
+                &trans  &trans  &trans  &trans
+            >;
+        };
+    };
+};

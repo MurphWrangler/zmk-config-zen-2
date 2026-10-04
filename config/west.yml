@@ -2,10 +2,15 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
+    - name: rschenk
+      url-base: https://github.com/rschenk
   projects:
     - name: zmk
       remote: zmkfirmware
-      revision: main
+      revision: 5b51501fead672c41b5cfb396f3dafe0894bf4e9
       import: app/west.yml
+    - name: zmk-keyboard-re-gret
+      remote: rschenk
+      revision: 34ca1fc7dc6991475b0c20f2c8361598e7aaeaca
   self:
     path: config
