@@ -61,27 +61,27 @@
         layer_1 {
             display-name = "Number";
             bindings = <
-                &kp ESC  &trans  &trans  &trans  &kp KP_NUM  &kp STAR  &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp PLUS
-                &skq LSHIFT  &skq LALT  &skq LCTRL  &skq LGUI  &skq RALT  &kp EQUAL  &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp MINUS
-                &trans  &trans  &trans  &trans  &trans  &kp KP_N0  &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp SLASH
+                &kp ESC  &kp BSPC  &kp DEL  &kp EQUAL  &kp KP_NUM  &kp KP_SLASH  &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp KP_MULTIPLY
+                &skq LSHIFT  &skq LALT  &skq LCTRL  &skq LGUI  &skq RALT  &kp KP_MINUS  &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp KP_PLUS
+                &trans  &trans  &trans  &trans  &trans  &kp KP_N0  &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_DOT
                 &trans  &trans  &trans  &trans
             >;
         };
         layer_2 {
             display-name = "Symbol";
             bindings = <
-                &kp ESC  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT  &kp STAR  &kp AMPS  &kp PIPE  &kp UNDER  &kp MINUS
-                &trans  &trans  &kp LBRC  &kp LBKT  &kp LPAR  &kp EQUAL  &skq RGUI  &skq LCTL  &skq RALT  &skq RSHIFT
-                &trans  &trans  &kp RBRC  &kp RBKT  &kp RPAR  &kp TILDE  &kp COLON  &kp SEMI  &kp RBRC  &kp EXCL
+                &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT  &kp CARET  &kp AMPS  &kp STAR  &kp PLUS  &kp EQUAL
+                &kp GRAVE  &kp LBKT  &kp RBKT  &kp LPAR  &kp RPAR  &kp BSLH  &skq RGUI  &skq LCTL  &skq RALT  &skq RSHIFT
+                &kp TILDE  &kp LBRC  &kp RBRC  &kp LT  &kp GT  &kp PIPE  &kp MINUS  &kp UNDER  &kp COLON  &kp SEMI
                 &trans  &trans  &trans  &trans
             >;
         };
         layer_3 {
             display-name = "Navigation";
             bindings = <
-                &kp ESC  &kp HOME  &kp UP  &kp END  &kp PG_UP  &kp CARET  &kp AMPS  &kp ASTRK  &kp LPAR  &kp RPAR
-                &kp LC(A)  &kp LEFT  &kp DOWN  &kp RIGHT  &kp PG_DN  &trans  &skq RGUI  &skq LCTL  &skq RALT  &skq RSHIFT
-                &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp TAB  &kp LC(V)  &kp LC(LA(V))  &kp BSPC  &kp DEL  &kp PSCRN  &kp INS
+                &kp ESC  &kp HOME  &kp UP  &kp END  &kp PG_UP  &kp TAB  &kp K_APP  &kp RET  &none  &none
+                &trans  &kp LEFT  &kp DOWN  &kp RIGHT  &kp PG_DN  &trans  &skq RGUI  &skq LCTL  &skq RALT  &skq RSHIFT
+                &trans  &trans  &trans  &trans  &trans  &trans  &kp BSPC  &kp DEL  &kp PSCRN  &kp INS
                 &trans  &trans  &trans  &trans
             >;
         };
