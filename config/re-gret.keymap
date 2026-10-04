@@ -48,6 +48,8 @@
         tab { bindings = <&kp TAB>; key-positions = <1 11>; timeout-ms = <50>; require-prior-idle-ms = <150>; layers = <BASE>; };
         menu { bindings = <&kp K_APP>; key-positions = <5 15>; timeout-ms = <50>; require-prior-idle-ms = <150>; layers = <BASE>; };
     };
+    // Transparent thumbs retain base tap/hold behaviors and layer chords.
+    // Only Navigation intentionally inherits finger bindings; other unused slots are no-ops.
     keymap {
         compatible = "zmk,keymap";
         layer_0 {
@@ -64,7 +66,7 @@
             bindings = <
                 &kp ESC  &kp BSPC  &kp DEL  &kp EQUAL  &kp KP_NUM  &kp KP_SLASH  &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp KP_MULTIPLY
                 &skq LSHIFT  &skq LALT  &skq LCTRL  &skq LGUI  &skq RALT  &kp KP_MINUS  &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp KP_PLUS
-                &trans  &trans  &trans  &trans  &trans  &kp KP_N0  &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_DOT
+                &none  &none  &none  &none  &none  &kp KP_N0  &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_DOT
                 &trans  &trans  &trans  &trans
             >;
         };
@@ -89,9 +91,9 @@
         layer_4 {
             display-name = "Function";
             bindings = <
-                &kp ESC  &kp C_PREV  &kp C_PP  &kp C_NEXT  &kp C_BRI_UP  &kp F12  &kp F7  &kp F8  &kp F9  &trans
-                &skq LSHIFT  &skq LALT  &skq LCTRL  &skq LGUI  &kp C_BRI_DN  &kp F11  &kp F4  &kp F5  &kp F6  &trans
-                &kp C_MUTE  &kp C_VOL_DN  &trans  &kp C_VOL_UP  &trans  &kp F10  &kp F1  &kp F2  &kp F3  &trans
+                &kp ESC  &kp C_PREV  &kp C_PP  &kp C_NEXT  &kp C_BRI_UP  &kp F12  &kp F7  &kp F8  &kp F9  &none
+                &skq LSHIFT  &skq LALT  &skq LCTRL  &skq LGUI  &kp C_BRI_DN  &kp F11  &kp F4  &kp F5  &kp F6  &none
+                &kp C_MUTE  &kp C_VOL_DN  &none  &kp C_VOL_UP  &none  &kp F10  &kp F1  &kp F2  &kp F3  &none
                 &trans  &trans  &trans  &trans
             >;
         };
@@ -99,8 +101,8 @@
             display-name = "Misc";
             bindings = <
                 &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &kp CARET  &kp AMPS  &kp ASTRK  &kp LPAR  &kp RPAR
-                &trans  &trans  &trans  &trans  &trans  &kp MINUS  &kp EQUAL  &kp LBKT  &kp RBKT  &kp BSLH
-                &bt BT_CLR  &out OUT_TOG  &trans  &trans  &bootloader  &kp UNDER  &kp PLUS  &kp LBRC  &kp RBRC  &kp PIPE
+                &none  &none  &none  &none  &none  &kp MINUS  &kp EQUAL  &kp LBKT  &kp RBKT  &kp BSLH
+                &bt BT_CLR  &out OUT_TOG  &none  &none  &bootloader  &kp UNDER  &kp PLUS  &kp LBRC  &kp RBRC  &kp PIPE
                 &trans  &trans  &trans  &trans
             >;
         };
