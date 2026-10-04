@@ -16,7 +16,7 @@ One identical UF2 is intended for both assembled wireless Re-Grets (Seeed XIAO n
 - Number + Navigation activates Function. Hold left outer Alt/Num and right inner Space/Nav for F1–F12. Navigation + Symbol no longer activates Function.
 - Number + Symbol activates Misc. Hold left outer and right outer thumbs.
 - Base-layer vertical combos: Q+A = Escape; W+R = Tab; J+M = Menu. These are initial choices, not previously finalized. Press together within 50 ms after at least 150 ms without another keypress.
-- All sticky modifiers use quick release and a 300 ms timeout.
+- All sticky modifiers use quick release, ignore other modifiers for chaining, and have a 300 ms timeout.
 - Shift tap dance/Caps Word removed. GUI remains in the original index-finger positions.
 - Base, Function and Misc finger bindings preserve the source (with unified sticky modifiers and bootloader replacing Studio unlock). Symbol, Number and Navigation are cleaned up as detailed below.
 - Layer-taps use balanced 200 ms timing. Space/Enter allow a held repeat after a second tap within 125 ms. Alt tap arms sticky Alt for the next key; holding it selects Number.

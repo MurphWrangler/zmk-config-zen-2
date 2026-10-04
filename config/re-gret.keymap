@@ -19,6 +19,7 @@
             bindings = <&kp>;
             release-after-ms = <300>;
             quick-release;
+            ignore-modifiers;
         };
         alt_num: alt_number {
             compatible = "zmk,behavior-hold-tap";
