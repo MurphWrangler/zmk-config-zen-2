@@ -46,11 +46,11 @@ Audited: all 26 letters; digits 0–9 and decimal; US punctuation; Space/Enter/E
 
 ## Transparency policy
 
-Number has five blank left-bottom positions. Function has five blank positions (base apostrophe, O, C, V and slash); they no longer inherit navigation actions or letters. Misc has five blank left-home positions and two blank left-bottom positions (base C and D). Symbol has no unused finger positions. Navigation retains its base letters for modifier shortcuts. All four thumbs remain transparent on every upper layer so the base tap/hold behaviors and cross-hand layer chords remain accessible.
+Number has five blank left-bottom positions. Function has five blank positions (base apostrophe, O, C, V and slash); they no longer inherit navigation actions or letters. Misc has five blank left-home positions, two blank left-bottom positions (base C and D), and all 15 right-hand finger positions blank. Symbol has no unused finger positions. Navigation retains its base letters for modifier shortcuts. All four thumbs remain transparent on every upper layer so the base tap/hold behaviors and cross-hand layer chords remain accessible.
 
 ## Misc layer
 
-Top-left five keys select Bluetooth profiles 1–5. Bottom-left key clears only the current profile; the next key toggles USB/Bluetooth output. Left bottom inner-index key (the base V position) enters the bootloader. Use profile clearing only when you intend to re-pair that profile.
+The right-hand finger positions are all no-ops; the thumb keys retain their base behaviors. Top-left five keys select Bluetooth profiles 1–5. Bottom-left key clears only the current profile; the next key toggles USB/Bluetooth output. Left bottom inner-index key (the base V position) enters the bootloader. Use profile clearing only when you intend to re-pair that profile.
 
 ## Flash
 
