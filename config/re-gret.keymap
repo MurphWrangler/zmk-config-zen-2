@@ -44,9 +44,9 @@
     };
     combos {
         compatible = "zmk,combos";
-        escape { bindings = <&kp ESC>; key-positions = <2 12>; timeout-ms = <50>; require-prior-idle-ms = <150>; layers = <BASE>; };
-        tab { bindings = <&kp TAB>; key-positions = <13 23>; timeout-ms = <50>; require-prior-idle-ms = <150>; layers = <BASE>; };
-        menu { bindings = <&kp K_APP>; key-positions = <5 15>; timeout-ms = <50>; require-prior-idle-ms = <150>; layers = <BASE>; };
+        escape { bindings = <&kp ESC>; key-positions = <2 12>; timeout-ms = <50>; require-prior-idle-ms = <150>; };
+        tab { bindings = <&kp TAB>; key-positions = <13 23>; timeout-ms = <50>; require-prior-idle-ms = <150>; };
+        menu { bindings = <&kp K_APP>; key-positions = <6 16>; timeout-ms = <50>; require-prior-idle-ms = <150>; };
     };
     // Transparent thumbs retain base tap/hold behaviors and layer chords.
     // Only Navigation intentionally inherits finger bindings; other unused slots are no-ops.

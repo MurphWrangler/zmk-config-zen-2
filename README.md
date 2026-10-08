@@ -15,7 +15,7 @@ One identical UF2 is intended for both assembled wireless Re-Grets (Seeed XIAO n
 
 - Number + Navigation activates Function. Hold left outer Alt/Num and right inner Space/Nav for F1–F12. Navigation + Symbol no longer activates Function.
 - Number + Symbol activates Misc. Hold left outer and right outer thumbs.
-- Base-layer vertical combos: F+S = Escape; T+D = Tab; J+M = Menu. Press together within 50 ms after at least 150 ms without another keypress.
+- Global vertical combos: physical F+S = Escape; T+D = Tab; L+N = Menu on every layer. L+N uses the right index top/home positions. Press together within 50 ms after at least 150 ms without another non-modifier keypress.
 - All sticky modifiers use quick release, ignore other modifiers for chaining, and have a 300 ms timeout.
 - Shift tap dance/Caps Word removed. GUI remains in the original index-finger positions.
 - Assigned keys preserve the discussed layout. Unused finger positions on Number, Function and Misc are explicit no-ops; Navigation keeps intentional transparent letters for shortcuts.
@@ -58,6 +58,6 @@ Connect one keyboard with a data-capable USB cable. Double-tap its reset button 
 
 Build success verifies compilation, not physical key scanning, Bluetooth behavior, combo ergonomics or the previously observed repeat issues. Test one keyboard first: every base key, all four thumbs, number/symbol/navigation/function/misc layers, modifier chords, held minus, repeated shifted letters, output switching and Bluetooth pairing.
 
-ZMK and `rschenk/zmk-keyboard-re-gret` use their hardware-compatible `v0.3` releases in `config/west.yml`. The reusable build workflow also uses ZMK `v0.3`. The build target is board `seeeduino_xiao_ble`, shield `re-gret`; the custom keymap is unchanged.
+ZMK and `rschenk/zmk-keyboard-re-gret` use their hardware-compatible `v0.3` releases in `config/west.yml`. The reusable build workflow also uses ZMK `v0.3`. The build target is board `seeeduino_xiao_ble`, shield `re-gret`; the custom keymap includes the global combos documented above.
 
-Download the `firmware` artifact from the successful GitHub Actions run on `re-gret-firmware` and extract `re-gret-forrest.uf2`. Use the run for this compatibility fix, rather than an older build. Verify that pressing physical Q produces only Q; compilation alone cannot confirm that the multi-row scanning issue is resolved on the keyboard.
+Download the `firmware` artifact from the successful GitHub Actions run on `re-gret-firmware` and extract `re-gret-forrest.uf2`. Use the successful run for the latest desired keymap commit, rather than an older build. Verify that pressing physical Q produces only Q; compilation alone cannot confirm that the multi-row scanning issue is resolved on the keyboard.
