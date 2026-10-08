@@ -1,4 +1,4 @@
 include:
-  - board: xiao_ble/nrf52840/zmk
+  - board: seeeduino_xiao_ble
     shield: re-gret
     artifact-name: re-gret-forrest

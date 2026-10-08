@@ -7,10 +7,10 @@ manifest:
   projects:
     - name: zmk
       remote: zmkfirmware
-      revision: 5b51501fead672c41b5cfb396f3dafe0894bf4e9
+      revision: v0.3
       import: app/west.yml
     - name: zmk-keyboard-re-gret
       remote: rschenk
-      revision: 34ca1fc7dc6991475b0c20f2c8361598e7aaeaca
+      revision: v0.3
   self:
     path: config

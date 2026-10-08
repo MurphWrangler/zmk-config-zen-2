@@ -58,4 +58,6 @@ Connect one keyboard with a data-capable USB cable. Double-tap its reset button 
 
 Build success verifies compilation, not physical key scanning, Bluetooth behavior, combo ergonomics or the previously observed repeat issues. Test one keyboard first: every base key, all four thumbs, number/symbol/navigation/function/misc layers, modifier chords, held minus, repeated shifted letters, output switching and Bluetooth pairing.
 
-ZMK and the manufacturer's keyboard module are pinned to exact commits in `config/west.yml` for reproducible builds.
+ZMK and `rschenk/zmk-keyboard-re-gret` use their hardware-compatible `v0.3` releases in `config/west.yml`. The reusable build workflow also uses ZMK `v0.3`. The build target is board `seeeduino_xiao_ble`, shield `re-gret`; the custom keymap is unchanged.
+
+Download the `firmware` artifact from the successful GitHub Actions run on `re-gret-firmware` and extract `re-gret-forrest.uf2`. Use the run for this compatibility fix, rather than an older build. Verify that pressing physical Q produces only Q; compilation alone cannot confirm that the multi-row scanning issue is resolved on the keyboard.
